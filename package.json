@@ -1,0 +1,33 @@
+{
+  "name": "tradesource-playwright",
+  "version": "1.0.0",
+  "description": "tradesource for playwright",
+  "homepage": "https://github.com/ncolley43/tradesource-playwright#readme",
+  "bugs": {
+    "url": "https://github.com/ncolley43/tradesource-playwright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncolley43/tradesource-playwright.git"
+  },
+  "license": "ISC",
+  "author": "nik colley",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:head": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "codegen": "playwright codegen http://localhost:4321"
+  },
+  "scripts-info": {
+    "test": "Run all Playwright tests headlessly (no browser window) - fastest, use for CI and quick checks",
+    "test:head": "Run all tests with a visible browser window so you can watch them execute",
+    "test:ui": "Open Playwright's interactive UI mode to pick, run, debug and time-travel through tests",
+    "codegen": "Open the Playwright recorder against http://localhost:4321 to generate test code from your clicks"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  }
+}

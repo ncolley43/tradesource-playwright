@@ -15,12 +15,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "node site/server.js",
     "test": "playwright test",
     "test:head": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "codegen": "playwright codegen http://localhost:4321"
   },
   "scripts-info": {
+    "start": "Start the TradeSource practice site at http://localhost:4321 (needed for codegen; tests start it automatically)",
     "test": "Run all Playwright tests headlessly (no browser window) - fastest, use for CI and quick checks",
     "test:head": "Run all tests with a visible browser window so you can watch them execute",
     "test:ui": "Open Playwright's interactive UI mode to pick, run, debug and time-travel through tests",

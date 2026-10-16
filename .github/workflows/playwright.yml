@@ -32,6 +32,21 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
+      # Start the TradeSource site in the background and wait until it responds
+      - name: Start TradeSource site
+        run: |
+          npm start > site.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:4321 > /dev/null; then
+              echo "Site is up at http://localhost:4321"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Site did not start within 30 seconds"
+          cat site.log
+          exit 1
+
       - name: Run Playwright tests
         run: npm test
 

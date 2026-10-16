@@ -77,6 +77,7 @@ export default defineConfig({
   webServer: {
     command: 'node site/server.js',
     url: 'http://localhost:4321',
-    reuseExistingServer: !process.env.CI,
+    /* Reuse the site if it's already running (e.g. started by `npm start` locally or in the CI workflow) */
+    reuseExistingServer: true,
   },
 });
